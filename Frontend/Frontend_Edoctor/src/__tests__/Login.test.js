@@ -1,5 +1,6 @@
+import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import Login from "../components/Login";  // Adjust the path according to your project structure
+import Login from "../components/Login"; // Adjust the path according to your project structure
 import { BrowserRouter as Router } from "react-router-dom";
 
 // Mock API module (since backend is not connected)
@@ -45,12 +46,8 @@ describe("Login Component", () => {
       </Router>
     );
 
-    fireEvent.change(screen.getByLabelText(/Username/), {
-      target: { value: "user#1" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/), {
-      target: { value: "validpassword" },
-    });
+    fireEvent.change(screen.getByLabelText(/Username/), { target: { value: "user#1" } });
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: "validpassword" } });
 
     fireEvent.click(screen.getByRole("button", { name: /Login/i }));
 
@@ -67,12 +64,8 @@ describe("Login Component", () => {
       </Router>
     );
 
-    fireEvent.change(screen.getByLabelText(/Username/), {
-      target: { value: "us" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/), {
-      target: { value: "validpassword" },
-    });
+    fireEvent.change(screen.getByLabelText(/Username/), { target: { value: "us" } });
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: "validpassword" } });
 
     fireEvent.click(screen.getByRole("button", { name: /Login/i }));
 
@@ -89,12 +82,8 @@ describe("Login Component", () => {
       </Router>
     );
 
-    fireEvent.change(screen.getByLabelText(/Username/), {
-      target: { value: "validuser" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/), {
-      target: { value: "short" },
-    });
+    fireEvent.change(screen.getByLabelText(/Username/), { target: { value: "validuser" } });
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: "short" } });
 
     fireEvent.click(screen.getByRole("button", { name: /Login/i }));
 
@@ -117,12 +106,8 @@ describe("Login Component", () => {
       </Router>
     );
 
-    fireEvent.change(screen.getByLabelText(/Username/), {
-      target: { value: "validuser" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/), {
-      target: { value: "validpassword" },
-    });
+    fireEvent.change(screen.getByLabelText(/Username/), { target: { value: "validuser" } });
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: "validpassword" } });
 
     fireEvent.click(screen.getByRole("button", { name: /Login/i }));
 
@@ -150,12 +135,8 @@ describe("Login Component", () => {
       </Router>
     );
 
-    fireEvent.change(screen.getByLabelText(/Username/), {
-      target: { value: "wronguser" },
-    });
-    fireEvent.change(screen.getByLabelText(/Password/), {
-      target: { value: "wrongpassword" },
-    });
+    fireEvent.change(screen.getByLabelText(/Username/), { target: { value: "wronguser" } });
+    fireEvent.change(screen.getByLabelText(/Password/), { target: { value: "wrongpassword" } });
 
     fireEvent.click(screen.getByRole("button", { name: /Login/i }));
 
